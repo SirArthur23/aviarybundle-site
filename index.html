@@ -57,6 +57,12 @@
     margin-top: auto; padding-top: 14px; font-size: 14px; color: var(--muted);
   }
   .status strong { color: var(--ink); font-weight: 600; }
+  .flow { max-width: 760px; margin: 36px auto 0; }
+  .flow ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+  .flow li { display: flex; flex-direction: column; gap: 2px; padding: 0 4px; color: var(--muted); font-size: 15px; }
+  .flow li strong { color: var(--ink); font-size: 17px; }
+  .flow .n { width: 26px; height: 26px; border-radius: 50%; border: 1px solid var(--line); display: grid; place-items: center;
+    font-size: 13px; font-weight: 600; color: var(--accent); margin-bottom: 6px; }
   .about { max-width: 620px; margin: 0 auto; }
   .about h3 { font-size: 20px; margin: 0 0 8px; }
   .about p { margin: 0 0 14px; color: var(--muted); }
@@ -88,14 +94,28 @@
     <p class="lead" lang="de">Drei kleine, native Mac-Apps, die zusammenpassen &mdash; jede nach einem Vogel benannt, jede dafür gebaut, eine Aufgabe richtig gut zu erledigen.</p>
   </header>
 
+  <section class="flow" aria-label="How they fit together">
+    <ol>
+      <li><span class="n">1</span>
+        <strong lang="en">Collect</strong><strong lang="de">Sammeln</strong>
+        <span lang="en">Caracara gathers everything for a project or client.</span><span lang="de">Caracara sammelt alles zu einem Projekt oder Kunden.</span></li>
+      <li><span class="n">2</span>
+        <strong lang="en">Plan</strong><strong lang="de">Planen</strong>
+        <span lang="en">Pirol turns it into concrete tasks.</span><span lang="de">Pirol macht daraus konkrete Aufgaben.</span></li>
+      <li><span class="n">3</span>
+        <strong lang="en">Follow the money</strong><strong lang="de">Geld im Blick</strong>
+        <span lang="en">Curlew keeps track of bills and income.</span><span lang="de">Curlew verwaltet Rechnungen und Einnahmen.</span></li>
+    </ol>
+  </section>
+
   <section class="apps" aria-label="The apps">
     <article class="card">
       <img class="bird" src="assets/card-caracara.png" alt="Watercolor caracara" data-alt-en="Watercolor caracara" data-alt-de="Aquarell eines Caracaras" loading="lazy">
       <p class="what" lang="en">Files</p>
     <p class="what" lang="de">Dateien</p>
       <h2>Caracara</h2>
-      <p lang="en">Gather files scattered across your drives into projects &mdash; without ever moving them. Offline-aware, searchable by text and color, and everything stays on your Mac.</p>
-    <p lang="de">Sammle Dateien, die über deine Laufwerke verstreut sind, in Projekten &mdash; ohne sie jemals zu verschieben. Offline-bewusst, durchsuchbar nach Text und Farbe, und alles bleibt auf deinem Mac.</p>
+      <p lang="en">Gather everything for a project or client &mdash; files scattered across your drives &mdash; without ever moving them. Offline-aware, searchable by text and color, and everything stays on your Mac.</p>
+    <p lang="de">Sammle alles zu einem Projekt oder Kunden &mdash; Dateien, die über deine Laufwerke verstreut sind &mdash; ohne sie jemals zu verschieben. Offline-bewusst, durchsuchbar nach Text und Farbe, und alles bleibt auf deinem Mac.</p>
       <p class="status" lang="en"><strong>In daily use.</strong> The public release is coming.</p>
     <p class="status" lang="de"><strong>Im täglichen Einsatz.</strong> Die Veröffentlichung kommt bald.</p>
     </article>
@@ -104,8 +124,8 @@
       <p class="what" lang="en">Boards</p>
     <p class="what" lang="de">Boards</p>
       <h2>Pirol</h2>
-      <p lang="en">Kanban boards and canvases for the work in front of you. Caracara can hand a group of files straight to a Pirol project.</p>
-    <p lang="de">Kanban-Boards und Canvases für die Arbeit, die gerade ansteht. Caracara kann eine Gruppe von Dateien direkt an ein Pirol-Projekt übergeben.</p>
+      <p lang="en">Kanban boards and canvases that turn what you collected into concrete tasks. Caracara hands a group of files straight to a Pirol project.</p>
+    <p lang="de">Kanban-Boards und Canvases, die aus dem Gesammelten konkrete Aufgaben machen. Caracara übergibt eine Dateigruppe direkt an ein Pirol-Projekt.</p>
       <p class="status" lang="en"><strong>In development.</strong></p>
     <p class="status" lang="de"><strong>In Entwicklung.</strong></p>
     </article>
@@ -114,8 +134,8 @@
       <p class="what" lang="en">Money</p>
     <p class="what" lang="de">Geld</p>
       <h2>Curlew</h2>
-      <p lang="en">Budgeting and bills. Caracara can send items with an amount and a due date to Curlew as bills.</p>
-    <p lang="de">Budgetplanung und Rechnungen. Caracara kann Einträge mit Betrag und Fälligkeitsdatum als Rechnungen an Curlew senden.</p>
+      <p lang="en">Budgeting, bills and income &mdash; it follows the money for your projects. Pirol shares a project with Curlew, and Caracara sends receipts with an amount and a due date as bills.</p>
+    <p lang="de">Budgetplanung, Rechnungen und Einnahmen &mdash; Curlew behält das Geld deiner Projekte im Blick. Pirol teilt ein Projekt mit Curlew, und Caracara sendet Belege mit Betrag und Fälligkeitsdatum als fällige Rechnungen.</p>
       <p class="status" lang="en"><strong>In development.</strong></p>
     <p class="status" lang="de"><strong>In Entwicklung.</strong></p>
     </article>
