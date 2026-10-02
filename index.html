@@ -65,47 +65,102 @@
     border-top: 1px solid var(--line); color: var(--muted); font-size: 14px;
   }
   a { color: var(--accent); text-underline-offset: 3px; }
+  /* Language switcher: both languages live in the HTML, CSS shows the active one. */
+  html[lang="de"] [lang="en"], html[lang="en"] [lang="de"] { display: none !important; }
+  .lang { position: absolute; top: 16px; right: 16px; display: flex; gap: 2px; padding: 3px;
+    background: var(--card); border: 1px solid var(--line); border-radius: 999px; }
+  .lang button { font: inherit; font-size: 13px; font-weight: 600; letter-spacing: .04em; cursor: pointer;
+    border: 0; background: transparent; color: var(--muted); padding: 4px 11px; border-radius: 999px; }
+  .lang button[aria-pressed="true"] { background: var(--accent); color: var(--canvas); }
+  .lang button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 </style>
 </head>
 <body>
+<nav class="lang" aria-label="Language / Sprache">
+  <button type="button" data-set-lang="en" aria-pressed="true">EN</button>
+  <button type="button" data-set-lang="de" aria-pressed="false">DE</button>
+</nav>
 <main>
   <header>
-    <img src="assets/caracara.png" alt="Watercolor illustration of a caracara">
+    <img src="assets/caracara.png" alt="Watercolor illustration of a caracara" data-alt-en="Watercolor illustration of a caracara" data-alt-de="Aquarell-Illustration eines Caracaras">
     <h1>The Aviary Bundle</h1>
-    <p class="lead">Three small, native Mac apps that fit together &mdash; each one named after a bird, each one built to do one job well.</p>
+    <p class="lead" lang="en">Three small, native Mac apps that fit together &mdash; each one named after a bird, each one built to do one job well.</p>
+    <p class="lead" lang="de">Drei kleine, native Mac-Apps, die zusammenpassen &mdash; jede nach einem Vogel benannt, jede dafür gebaut, eine Aufgabe richtig gut zu erledigen.</p>
   </header>
 
   <section class="apps" aria-label="The apps">
     <article class="card">
-      <img class="bird" src="assets/card-caracara.png" alt="Watercolor caracara" loading="lazy">
-      <p class="what">Files</p>
+      <img class="bird" src="assets/card-caracara.png" alt="Watercolor caracara" data-alt-en="Watercolor caracara" data-alt-de="Aquarell eines Caracaras" loading="lazy">
+      <p class="what" lang="en">Files</p>
+    <p class="what" lang="de">Dateien</p>
       <h2>Caracara</h2>
-      <p>Gather files scattered across your drives into projects &mdash; without ever moving them. Offline-aware, searchable by text and color, and everything stays on your Mac.</p>
-      <p class="status"><strong>In daily use.</strong> The public release is coming.</p>
+      <p lang="en">Gather files scattered across your drives into projects &mdash; without ever moving them. Offline-aware, searchable by text and color, and everything stays on your Mac.</p>
+    <p lang="de">Sammle Dateien, die über deine Laufwerke verstreut sind, in Projekten &mdash; ohne sie jemals zu verschieben. Offline-bewusst, durchsuchbar nach Text und Farbe, und alles bleibt auf deinem Mac.</p>
+      <p class="status" lang="en"><strong>In daily use.</strong> The public release is coming.</p>
+    <p class="status" lang="de"><strong>Im täglichen Einsatz.</strong> Die Veröffentlichung kommt.</p>
     </article>
     <article class="card">
-      <img class="bird" src="assets/card-pirol.png" alt="Watercolor golden oriole" loading="lazy">
-      <p class="what">Boards</p>
+      <img class="bird" src="assets/card-pirol.png" alt="Watercolor golden oriole" data-alt-en="Watercolor golden oriole" data-alt-de="Aquarell eines Pirols" loading="lazy">
+      <p class="what" lang="en">Boards</p>
+    <p class="what" lang="de">Boards</p>
       <h2>Pirol</h2>
-      <p>Kanban boards and canvases for the work in front of you. Caracara can hand a group of files straight to a Pirol project.</p>
-      <p class="status"><strong>In development.</strong></p>
+      <p lang="en">Kanban boards and canvases for the work in front of you. Caracara can hand a group of files straight to a Pirol project.</p>
+    <p lang="de">Kanban-Boards und Canvases für die Arbeit, die gerade ansteht. Caracara kann eine Gruppe von Dateien direkt an ein Pirol-Projekt übergeben.</p>
+      <p class="status" lang="en"><strong>In development.</strong></p>
+    <p class="status" lang="de"><strong>In Entwicklung.</strong></p>
     </article>
     <article class="card">
-      <img class="bird" src="assets/card-curlew.png" alt="Watercolor curlew" loading="lazy">
-      <p class="what">Money</p>
+      <img class="bird" src="assets/card-curlew.png" alt="Watercolor curlew" data-alt-en="Watercolor curlew" data-alt-de="Aquarell eines Brachvogels" loading="lazy">
+      <p class="what" lang="en">Money</p>
+    <p class="what" lang="de">Geld</p>
       <h2>Curlew</h2>
-      <p>Budgeting and bills. Caracara can send items with an amount and a due date to Curlew as bills.</p>
-      <p class="status"><strong>In development.</strong></p>
+      <p lang="en">Budgeting and bills. Caracara can send items with an amount and a due date to Curlew as bills.</p>
+    <p lang="de">Budgetplanung und Rechnungen. Caracara kann Einträge mit Betrag und Fälligkeitsdatum als Rechnungen an Curlew senden.</p>
+      <p class="status" lang="en"><strong>In development.</strong></p>
+    <p class="status" lang="de"><strong>In Entwicklung.</strong></p>
     </article>
   </section>
 
   <section class="about">
-    <h3>Why birds?</h3>
-    <p>Because naming apps is hard, and after enough failed attempts (including a short-lived &ldquo;Salad Bundle&rdquo;) an aviary was the only theme that held together. The apps are separate and never touch each other's data: they trade plain files through each other's inbox folders, and nothing leaves your Mac.</p>
+    <h3 lang="en">Why birds?</h3>
+    <h3 lang="de">Warum Vögel?</h3>
+    <p lang="en">Because naming apps is hard, and after enough failed attempts (including a short-lived &ldquo;Salad Bundle&rdquo;) an aviary was the only theme that held together. The apps are separate and never touch each other's data: they trade plain files through each other's inbox folders, and nothing leaves your Mac.</p>
+    <p lang="de">Weil das Benennen von Apps schwer ist &mdash; und nach genug gescheiterten Versuchen (darunter ein kurzlebiges &bdquo;Salad Bundle&ldquo;) war eine Voliere das einzige Thema, das zusammenhielt. Die Apps sind eigenständig und greifen nie auf die Daten der anderen zu: Sie tauschen einfache Dateien über die Eingangsordner aus, und nichts verlässt deinen Mac.</p>
   </section>
 </main>
 <footer>
   &copy; 2026 Arthur Schmidt-Pabst &middot; Made in Germany
 </footer>
+<script>
+(function () {
+  var META = {
+    en: { title: "The Aviary Bundle", desc: "Three small, native Mac apps that fit together: Caracara gathers your files, Pirol organizes your work, Curlew keeps track of your money." },
+    de: { title: "The Aviary Bundle", desc: "Drei kleine, native Mac-Apps, die zusammenpassen: Caracara sammelt deine Dateien, Pirol organisiert deine Arbeit, Curlew behält dein Geld im Blick." }
+  };
+  function stored() { try { return localStorage.getItem("lang"); } catch (e) { return null; } }
+  function store(l) { try { localStorage.setItem("lang", l); } catch (e) {} }
+  function initial() {
+    var q = new URLSearchParams(location.search).get("lang");
+    if (q === "de" || q === "en") return q;
+    var s = stored();
+    if (s === "de" || s === "en") return s;
+    return /^de\b/i.test(navigator.language || "") ? "de" : "en";
+  }
+  function apply(l) {
+    document.documentElement.lang = l;
+    document.title = META[l].title;
+    var d = document.querySelector('meta[name="description"]');
+    if (d) d.setAttribute("content", META[l].desc);
+    document.querySelectorAll("img[data-alt-" + l + "]").forEach(function (i) { i.alt = i.getAttribute("data-alt-" + l); });
+    document.querySelectorAll("[data-set-lang]").forEach(function (b) {
+      b.setAttribute("aria-pressed", b.getAttribute("data-set-lang") === l ? "true" : "false");
+    });
+  }
+  document.querySelectorAll("[data-set-lang]").forEach(function (b) {
+    b.addEventListener("click", function () { var l = b.getAttribute("data-set-lang"); store(l); apply(l); });
+  });
+  apply(initial());
+})();
+</script>
 </body>
 </html>
