@@ -63,9 +63,17 @@
   .flow li strong { color: var(--ink); font-size: 17px; }
   .flow .n { width: 26px; height: 26px; border-radius: 50%; border: 1px solid var(--line); display: grid; place-items: center;
     font-size: 13px; font-weight: 600; color: var(--accent); margin-bottom: 6px; }
+  .cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin: 26px 0 0; }
+  .btn { display: inline-block; padding: 10px 20px; border-radius: 999px; font-weight: 600; font-size: 16px;
+    text-decoration: none; border: 1px solid var(--accent); }
+  .btn.primary { background: var(--accent); color: var(--canvas); }
+  .btn.ghost { color: var(--accent); }
+  .btn:hover { opacity: .85; }
+  .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
   .about { max-width: 620px; margin: 0 auto; }
   .about h3 { font-size: 20px; margin: 0 0 8px; }
   .about p { margin: 0 0 14px; color: var(--muted); }
+  footer p { margin: 0 0 6px; }
   footer {
     max-width: 860px; margin: 24px auto 0; padding: 24px; text-align: center;
     border-top: 1px solid var(--line); color: var(--muted); font-size: 14px;
@@ -92,6 +100,12 @@
     <h1>The Aviary Bundle</h1>
     <p class="lead" lang="en">Three small, native Mac apps that fit together &mdash; each one named after a bird, each one built to do one job well.</p>
     <p class="lead" lang="de">Drei kleine, native Mac-Apps, die zusammenpassen &mdash; jede nach einem Vogel benannt, jede dafür gebaut, eine Aufgabe richtig gut zu erledigen.</p>
+    <div class="cta">
+      <a class="btn primary" href="https://aaa.schmidtpabst.com/" lang="en">Follow the build</a>
+      <a class="btn primary" href="https://aaa.schmidtpabst.com/de/" lang="de">Den Bau verfolgen</a>
+      <a class="btn ghost" href="https://aaa.schmidtpabst.com/#news" lang="en">Read the news</a>
+      <a class="btn ghost" href="https://aaa.schmidtpabst.com/de/#news" lang="de">Neuigkeiten lesen</a>
+    </div>
   </header>
 
   <section class="flow" aria-label="How they fit together">
@@ -149,7 +163,10 @@
   </section>
 </main>
 <footer>
-  &copy; 2026 Arthur Schmidt-Pabst &middot; Made in Germany
+  <p lang="en">A product family by <a href="https://aaa.schmidtpabst.com/">Augmented Arthur: Applications</a>.</p>
+  <p lang="de">Eine Produktfamilie von <a href="https://aaa.schmidtpabst.com/de/">Augmented Arthur: Applications</a>.</p>
+  <p>&copy; 2026 Arthur Schmidt-Pabst &middot; Made in Germany &middot;
+    <a href="https://aaa.schmidtpabst.com/impressum/" lang="en">Imprint &amp; Privacy</a><a href="https://aaa.schmidtpabst.com/impressum/" lang="de">Impressum &amp; Datenschutz</a></p>
 </footer>
 <script>
 (function () {
